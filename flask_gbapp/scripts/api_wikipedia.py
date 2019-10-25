@@ -1,34 +1,27 @@
-"""
-
-"""
 import wikipedia
 
 
 class ApiWikipedia:
-	"""
+    """ Request for information about a place. """
 
-	"""
+    def __init__(self):
+        """ Wikipedia France """
+        wikipedia.set_lang("fr")
 
-	def __init__(self):
-		wikipedia.set_lang("fr")
+    def find(self, keywords):
+        """ Creation of a dictionary to keep the information found. """
 
-	def find(self, keywords):
-		"""
-		"""
+        try:
+            # Select the first element that corresponds to the keywords.
+            page = wikipedia.search(keywords, results=1)[0]
 
-		#print(wikipedia.summary(keywords))
-		page = wikipedia.search(keywords, results=1)
-		page = page[0]
+        except IndexError:
+            return False
 
-		#url = "https://fr.wikipedia.org/wiki/" + page
+        url = wikipedia.page(page).url
+        summary = wikipedia.summary(page)
 
-		#print(page, url)
-		url = wikipedia.page(page).url
-
-		#print(wikipedia.summary(page))
-		#print(wikipedia.page(page).url)
-
-		return {
-			"summary": wikipedia.summary(page),
-			"url": url
-		}
+        return {
+            "summary": summary,
+            "url": url
+        }
