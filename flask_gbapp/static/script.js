@@ -35,7 +35,7 @@ function ajax() {
     let div = document.createElement('div');
     div.classList.add('message', 'loader');
     dialog.appendChild(div);
-    div.innerHTML = '<img src="static/rounded-blocks.gif" width="32" height="32" alt="loader"/>';
+    div.innerHTML = '<img src="static/loader.gif" width="32" height="32" alt="loader"/>';
 
     dialog.scrollTop = dialog.scrollHeight;
 
