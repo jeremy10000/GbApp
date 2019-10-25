@@ -1,32 +1,29 @@
 import re
-from . import stopwords
+
+from .stopwords import STOPWORDS
 
 
 class Parser:
-	""" Parser """
+    """ Try to extract a place from a question. """
 
-	def generator(self, string):
-		""" generator """
-		for word in string:
-			if word not in stopwords.STOPWORDS:
-				yield word + " "
+    def __init__(self):
+        """ The attribute that must be returned. """
+        self.place = str()
 
-	def extract(self, string):
-		""" Extract all the words that are not in the list """
-		
-		# lowercase
-		string = string.lower()
+    def extract(self, string):
+        """ Extract words that are not in a list (stopwords). """
 
-		# no symbols
-		string = re.sub("[,?@#!&.<>^\"""]"," ", string)
-		
-		string = string.split()
-		generator = self.generator(string)
+        # lowercase
+        string = string.lower()
 
-		# All the words that are not in the list (stopwords).
-		place = str()
+        # no symbols
+        string = re.sub("[,-?@#!&.<>^\"""]", " ", string)
 
-		for word in generator:
-			place += word
+        # extract words
+        generator = " ".join((word for word in string.split()
+                              if word not in STOPWORDS))
 
-		return place
+        for word in generator:
+            self.place += word
+
+        return self.place
