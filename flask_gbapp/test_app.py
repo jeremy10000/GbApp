@@ -64,6 +64,9 @@ class TestApp(unittest.TestCase):
             "formatted_address": data[0]['formatted_address'],
             "route": data[0]['address_components'][0]["long_name"],
             "locality": data[0]['address_components'][1]["long_name"],
+            "administrative_area_level_1":
+            data[0]['address_components'][3]["long_name"],
+
             "lat": data[0]['geometry']["location"]["lat"],
             "lng": data[0]['geometry']["location"]["lng"]
         }
