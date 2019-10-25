@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GrandPy, le papy voyageur</title>
+        <meta charset="utf-8" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Lobster|Handlee&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="icon" href="static/favicon.png" />
+    </head>
+    <body>
+
+      <div class="bg">
+        <!-- Header -->
+        <header class="center size">
+            <h1>GrandPy</h1>
+            <h2>Le papy voyageur</h2>
+        </header>
+
+        <section class="center size">
+          <div id="dialog" class="border">
+            <!-- Messages -->
+            <div class="message bot">
+              <p>Salut ! Tu veux me demander quelque chose ?</p>
+            </div>
+          </div>
+
+          <!-- Question -->
+          <form onsubmit="return false;">
+            <input type="textarea" id="question" name="question" placeholder="Écrivez votre demande et appuyez sur Entrée" />
+          </form>
+
+          <!-- Google map -->
+          <div id="map" class="border size"></div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer class="center size">Jérémy J - <a href="#">GitHub</a></footer>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDETpet8qa50dK1cq24LqYFR2Ohi4T43Yg&callback=initMap"
+    async defer></script>
+    </body>
+</html>
