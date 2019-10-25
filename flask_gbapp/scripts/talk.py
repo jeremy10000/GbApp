@@ -18,7 +18,7 @@ class Talk:
 
             "Place Error": ["Désolé, je ne sais rien.",
                             "Je ne connais pas, désolé !",
-                            "Je n'ai jamais entendu parler."]
+                            "Je n'en ai jamais entendu parler."]
         }
 
     def sentence(self, key):
