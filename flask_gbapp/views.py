@@ -47,14 +47,21 @@ def get():
 
     try:
         # In general, "establishment" is more precise.
-        if "establishment" in data_googlemaps:
-            data_wikipedia = api_wikipedia.find(
-                data_googlemaps["establishment"] + " "
-                + data_googlemaps["locality"])
+        if "locality" in data_googlemaps:
+            if "establishment" in data_googlemaps:
+                data_wikipedia = api_wikipedia.find(
+                    data_googlemaps["establishment"] + " "
+                    + data_googlemaps["locality"])
+            elif "route" in data_googlemaps:
+                data_wikipedia = api_wikipedia.find(
+                    data_googlemaps["route"] + " "
+                    + data_googlemaps["locality"])
+            else:
+                data_wikipedia = api_wikipedia.find(
+                    data_googlemaps["locality"])
         else:
             data_wikipedia = api_wikipedia.find(
-                data_googlemaps["route"] + " "
-                + data_googlemaps["locality"])
+                data_googlemaps["administrative_area_level_1"])
 
     except KeyError:
         data_wikipedia = False

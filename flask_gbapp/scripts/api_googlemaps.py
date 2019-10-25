@@ -29,7 +29,8 @@ class ApiGoogleMap:
                 for k in data[0]["address_components"]
                 if "route" in k["types"] or
                    "establishment" in k["types"] or
-                   "locality" in k["types"]
+                   "locality" in k["types"] or
+                   "administrative_area_level_1" in k["types"]
             }
             self.map["lat"] = data[0]['geometry']['location']['lat']
             self.map["lng"] = data[0]['geometry']['location']['lng']
