@@ -4,7 +4,10 @@
         <title>GrandPy, le papy voyageur</title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <!-- Mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <link href="https://fonts.googleapis.com/css?family=Roboto|Lobster|Handlee&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
@@ -36,12 +39,12 @@
         </section>
 
         <!-- Footer -->
-        <footer class="center size">Jérémy J - <a href="#">GitHub</a></footer>
+        <footer class="center size">Jérémy J - <a href="https://github.com/jeremy10000">GitHub</a></footer>
       </div>
 
     <!-- JS -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ key }}&callback=initMap"
     async defer></script>
     </body>
 </html>
