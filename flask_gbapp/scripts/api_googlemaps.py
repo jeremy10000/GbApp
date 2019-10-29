@@ -1,5 +1,7 @@
 import requests
 
+from config import BACK_KEY
+
 
 class ApiGoogleMap:
     """ Request for information about a place. """
@@ -14,7 +16,7 @@ class ApiGoogleMap:
 
         params = {
             'address': keywords,
-            'key': 'API_KEY'
+            'key': BACK_KEY
         }
 
         try:
