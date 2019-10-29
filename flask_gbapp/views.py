@@ -3,6 +3,7 @@ from .scripts.api_googlemaps import ApiGoogleMap
 from .scripts.api_wikipedia import ApiWikipedia
 from .scripts.parser import Parser
 from .scripts.talk import Talk
+from config import FRONT_KEY
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     """ Homepage """
-    return render_template("index.html")
+    return render_template("index.html", key=FRONT_KEY)
 
 
 @app.route("/get", methods=["GET"])
