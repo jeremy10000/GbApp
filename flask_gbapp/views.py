@@ -3,7 +3,7 @@ from .scripts.api_googlemaps import ApiGoogleMap
 from .scripts.api_wikipedia import ApiWikipedia
 from .scripts.parser import Parser
 from .scripts.talk import Talk
-from config import FRONT_KEY
+from .scripts.config import FRONT_KEY
 
 
 app = Flask(__name__)

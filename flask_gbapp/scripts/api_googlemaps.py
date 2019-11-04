@@ -1,6 +1,6 @@
 import requests
 
-from config import BACK_KEY
+from .config import BACK_KEY
 
 
 class ApiGoogleMap:
