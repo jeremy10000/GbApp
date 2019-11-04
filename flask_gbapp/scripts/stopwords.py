@@ -1,6 +1,6 @@
 STOPWORDS = [
     "grandpy", "mamie", "d'avance", "semaine",
-    "j'espère",
+    "j'espère", "trouve", "trouver",
     "bonsoir", "bonjour", "salutations", "salutation",
     "m'indiquer", "indiquer", "indique", "indique-moi",
     "indique-nous", "l'adresse",
